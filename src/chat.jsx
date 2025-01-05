@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { marked } from "marked";
 import { Icon } from '@iconify/react';
@@ -11,13 +11,13 @@ const Chat = () => {
     const [step, setStep] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
-    const questions = [
+    const questions = useMemo(() => [
         "What type of smells do you like? (e.g., fresh, woody)",
         "What is your skin type? (e.g., oily, dry)",
         "How would you describe your personality? (e.g., bold, reserved)",
         "What is your budget? (e.g., $, $$, $$$)",
         "What is the occasion? (e.g., casual, formal)"
-    ];
+    ], []);
 
     useEffect(() => {
         setMessages([{ role: "bot", content: questions[0] }]);
