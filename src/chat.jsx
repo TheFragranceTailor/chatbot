@@ -21,7 +21,7 @@ const Chat = () => {
 
     useEffect(() => {
         setMessages([{ role: "bot", content: questions[0] }]);
-    }, []);
+    }, [questions]);
 
     const sendMessage = async () => {
         const newMessages = [...messages, { role: "user", content: userInput }];
