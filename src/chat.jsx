@@ -50,10 +50,6 @@ const Chat = () => {
         }
     };
 
-    const toggleChat = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
         <div>
             <div className={`chat-container ${isOpen ? 'open' : ''}`}>
@@ -77,9 +73,6 @@ const Chat = () => {
                     </div>
                 </div>
             </div>
-            <button className="fab" onClick={toggleChat}>
-                <Icon icon={chatIcon} style={{ color: 'white', fontSize: '30px' }} />
-            </button>
         </div>
     );
 };
